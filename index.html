@@ -10,6 +10,8 @@
   <h3>这里是 2034 年，你是一名在末世下生存的成年人。</h3>
   <p>
     <span>作者：</span><span id="author" ></span>
+    <br />
+    <span>ping: </span><span id="pong"></span>
   </p>
   <script>
     console.log(powers);
@@ -19,6 +21,13 @@
     if (result.isPowers) {
       alert('i get powers');
     }
+
+    const func = async function () {
+      const response = await powers.ping();
+      document.querySelector('#pong').innerHTML = response;
+    }
+
+    func();
   </script>
 </body>
 </html>

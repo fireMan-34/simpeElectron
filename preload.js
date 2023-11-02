@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
-const { contextBridge } = require('electron');
+const { contextBridge, ipcRenderer } = require('electron');
 
 
 contextBridge.exposeInMainWorld('powers', {
@@ -20,4 +20,5 @@ contextBridge.exposeInMainWorld('powers', {
       isPowers: true,
     }
   },
+  ping: () => ipcRenderer.invoke('ping'),
 });

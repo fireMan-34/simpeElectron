@@ -1,5 +1,5 @@
 const { join } = require('path');
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 
 const createWindow = () => {
   const win = new BrowserWindow({
@@ -23,6 +23,8 @@ readyPromise.then(() => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();
   });
 });
+
+readyPromise.then(() => ipcMain.handle('ping', () => 'pong')),
 
 app.on('window-all-closed', () => {
   // 关闭进程
