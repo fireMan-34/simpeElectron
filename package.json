@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron-forge start",
-    "build": "npx electron-forge import",
+    "init": "npx electron-forge import",
     "package": "electron-forge package",
     "make": "electron-forge make"
   },
