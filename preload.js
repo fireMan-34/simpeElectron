@@ -7,3 +7,17 @@ window.addEventListener('DOMContentLoaded', () => {
   };
   repealceText('author', 'fireMan34');
 });
+
+
+const { contextBridge } = require('electron');
+
+
+contextBridge.exposeInMainWorld('powers', {
+  quanBing: () => {
+    console.log('this is 抛瓦');
+
+    return {
+      isPowers: true,
+    }
+  },
+});
