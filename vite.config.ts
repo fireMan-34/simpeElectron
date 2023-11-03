@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { join } from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -8,9 +9,15 @@ export default defineConfig({
     rollupOptions: {
       
     },
-    watch:{
-      buildDelay: 340,
-    },
+    // watch:{
+    //   buildDelay: 340,
+    // },
   },
-  base: './'
+  base: './',
+  resolve: {
+    alias: {
+      'client': join(__dirname, './src'),
+    },
+    extensions: [ '.tsx', '.ts', 'jsx', 'js', '.json', ] 
+  },
 });
