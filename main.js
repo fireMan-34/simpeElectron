@@ -10,7 +10,7 @@ const createWindow = () => {
     }
   });
 
-  win.loadFile('index.html');
+  win.loadFile(join(__dirname, 'dist', 'index.html'));
 };
 
 const readyPromise = app.whenReady();
