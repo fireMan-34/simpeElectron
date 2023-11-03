@@ -9,6 +9,7 @@ export default defineConfig({
     rollupOptions: {
       
     },
+    outDir: "./dist/client",
     // watch:{
     //   buildDelay: 340,
     // },

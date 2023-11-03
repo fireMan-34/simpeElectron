@@ -2,15 +2,16 @@
   "name": "my-electron-app",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/source/main.js",
+  "main": "dist/server/source/main.js",
   "scripts": {
     "start": "electron-forge start",
     "init": "npx electron-forge import",
     "package": "electron-forge package",
     "make": "electron-forge make",
-    "buildRenderView": "tsc && vite build",
+    "buildClient": "vite build",
     "buildServer": "tsc -p ./tsconfig.node.json",
-    "prestart": "yarn buildRenderView & yarn buildServer"
+    "devClient": "yarn buildClient -w",
+    "devServer": "yarn buildServer -w"
   },
   "author": "",
   "license": "ISC",

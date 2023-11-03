@@ -10,7 +10,7 @@ const createWindow = () => {
     }
   });
 
-  win.loadFile(join(__dirname, "..", 'index.html'));
+  win.loadFile(join(__dirname, "..", ".." ,  "client" , 'index.html'));
 };
 
 const readyPromise = app.whenReady();
@@ -21,6 +21,7 @@ readyPromise.then(() => {
   app.on('activate', () => {
     // 无窗口且运行
     if (BrowserWindow.getAllWindows().length === 0) createWindow();
+    console.log('测试 ===========》')
   });
 });
 
